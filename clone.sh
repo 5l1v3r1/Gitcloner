@@ -29,12 +29,13 @@ echo -e "$cyan [$yellow*$cyan]$white Getting Repositories ..."
 curl -s $url/$username?tab=repositories | grep "/$username/" > $log
 echo -e "$cyan [$yellow*$cyan]$white Cloning Repositories ..."
 cat $log | grep '<a href=' | sed -n 's/.*href="\([^"]*\).*/\1/p' > $link
-rm -rf *.txt
+rm $log
 echo -e ""
 while read repo
 do
     echo -e "$cyan   [$okegreen-$cyan]$white $repo"
     git clone $url$repo > /dev/null 2>&1
 done < $link
+rm -rf *.txt
 echo -e ""
 echo -e "$cyan [$yellow*$cyan]$white Done"
