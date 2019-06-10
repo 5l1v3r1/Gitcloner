@@ -25,6 +25,8 @@ banner(){
 banner
 read -p " Username to Clone : " username;
 echo -e ""
+mkdir $username
+cd $username
 echo -e "$cyan [$yellow*$cyan]$white Getting Repositories ..."
 curl -s $url/$username?tab=repositories | grep "/$username/" > $log
 echo -e "$cyan [$yellow*$cyan]$white Cloning Repositories ..."
