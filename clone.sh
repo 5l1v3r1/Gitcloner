@@ -13,7 +13,7 @@ link="repo.txt"
 url="https://github.com"
      
 banner(){
-    clear
+    #clear
     echo -e "$cyan"
     echo -e "$cyan  ____ _ ___ ____ _    ____ _  _ ____ ____ "
     echo -e "$cyan  | __ |  |  |    |    |  | |\ | |___ |__/ "
